@@ -8,7 +8,7 @@ function App() {
   const fetchAssets = async() =>{
     try{
       const response = await fetch(
-        `https://deep-index.moralis.io/api/v2.2/wallets/${address}/tokens?chain=eth&exclude_spam=true&exclude_unverified_contracts=true`,
+        `https://deep-index.moralis.io/api/v2.2/wallets/${address}/tokens?chain=eth&exclude_spam=true&exclude_unlverified_contracts=true`,
         {
         method:'GET',
         headers: {
@@ -53,9 +53,11 @@ function App() {
                   />
                 </td>
                 <td>{asset.name}</td>
-                <td>{asset.usd_price}</td>
-                <td>{asset.usd_value}</td>
-                <td>{asset.usd_price_24hr_percent_change}</td>
+                <td>{asset.usd_price?.toFixed(2)}</td>
+                <td>{asset.usd_value?.toFixed(2)}</td>
+                <td className= {asset.usd_price_24hr_percent_change < 0 ? "negative" : "positive"}>
+                  {asset.usd_price_24hr_percent_change?.toFixed(2)}%
+                  </td>
               </tr>
             ))
           ) : (

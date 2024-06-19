@@ -23,6 +23,14 @@ function App() {
     }
   }
 
+  const handleInputChange= (e)=>{
+    setAddress(e.target.value);
+  }
+
+  const handleButtonClick= (e)=>{
+    fetchAssets(address);
+  }
+
   useEffect(()=>{
     fetchAssets(address);
   },[address]);
@@ -30,6 +38,13 @@ function App() {
   return (
       <div className='App'>
         <h1>Portfolio Tracker</h1>
+        <input 
+        type="text"
+        value={address}
+        onChange={handleInputChange}
+        placeholder='Enter Wallet Address'
+        />
+        <button onClick={handleButtonClick}>Fetch Assets</button>
         <table>
           <thead>
             <tr>

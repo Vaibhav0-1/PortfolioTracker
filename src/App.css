@@ -183,3 +183,14 @@ footer {
   margin-top: 5px; /* Adjust margin for spacing */
   animation: fadeIn 0.5s ease; /* Fade in animation */
 }
+
+.portfolio-header {
+  text-align: center;
+  font-size: 3rem;
+  color: #5e35b1; /* Attractive color (Purple 700 from Material Design) */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  font-weight: bold; /* Make text bold */
+}

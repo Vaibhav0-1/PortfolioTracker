@@ -38,7 +38,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Portfolio Tracker</h1>
+      <h1 style={{ 
+  textAlign: 'center', 
+  fontSize: '3rem', 
+  color: '#999999', 
+  textTransform: 'uppercase',
+  letterSpacing: '2px',
+  marginBottom: '20px',
+  textShadow: '2px 2px 2px rgba(0, 0, 0, 0.2)' 
+}}>
+  Portfolio Tracker</h1>
       <div className="form-container">
         <input 
           type="text"

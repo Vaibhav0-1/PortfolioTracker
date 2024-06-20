@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [assets, setAssets] = useState([]);
-  const [address, setAddress] = useState('0x209c8bbE2454257Eb1A8E630f59f4b1b50a98543');
+  const [address, setAddress] = useState('0x3d0b45Bc914457E027094E509eBE631E356cbB03');
 
   const fetchAssets = async () => {
     try {

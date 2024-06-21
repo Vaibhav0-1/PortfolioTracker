@@ -194,3 +194,104 @@ footer {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   font-weight: bold; /* Make text bold */
 }
+
+/* AssetTable.css */
+
+/* Chain selector */
+.chain-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Chain button */
+.chain-button {
+  border: none;
+  background-color: #0000; /* Light grey */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px solid #fff;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.chain-button.selected {
+  border-color: #007bff; /* Bootstrap primary blue */
+}
+
+.chain-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Lighten the background on hover */
+  transform: translateY(-2px); /* Move the button up slightly */
+}
+
+/* Chain logo */
+.chain-logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* Chain details */
+.chain-details {
+  width: 100px;
+}
+
+/* Hover effects for other elements */
+.App:hover {
+  filter: brightness(0.9); /* Slightly dim the entire app on hover */
+}
+
+.title:hover {
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); /* Increase text shadow on header hover */
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Enhance box shadow on form container hover */
+}
+
+.search-bar:hover {
+  transform: scale(1.02); /* Scale up the search bar on hover */
+}
+
+.custom-button:hover {
+  background-color: #b84749; /* Lighter red */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance button shadow on hover */
+}
+
+.table-container:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Enhance box shadow on table container hover */
+}
+
+table:hover {
+  transform: translateY(-2px); /* Move table up slightly on hover */
+}
+
+th:hover {
+  background-color: #0f2862; /* Darken header background on hover */
+}
+
+td:hover {
+  background-color: #222; /* Darken cell background on hover */
+}
+
+.asset-logo:hover {
+  transform: rotate(360deg); /* Rotate asset logos 360 degrees on hover */
+}
+
+.positive:hover,
+.negative:hover {
+  transform: scale(1.1); /* Scale up positive and negative percentage on hover */
+}
+
+/* Footer hover effect */
+footer:hover {
+  background-color: #0a243e; /* Darken footer background on hover */
+}
+
+/* Moralis logo hover effect */
+.moralis-logo:hover {
+  transform: rotateY(180deg); /* Rotate Moralis logo on hover */
+}
+

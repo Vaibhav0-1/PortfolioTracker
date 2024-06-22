@@ -1,7 +1,9 @@
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import './App.css';
 import AssetTable from "./AssetTable";
 import ChainSelector from "./ChainSelector";
+import Networth from "./Networth.jsx"; 
+
 
 function App() {
 
@@ -10,7 +12,7 @@ function App() {
   const [tempAddress, setTempAddress] = useState("0x209c8bbE2454257Eb1A8E630f59f4b1b50a98543")
   const [address, setAddress] = useState(tempAddress)
 
-  const [networth, setnetworth] = useState({})
+  const [netWorth, setNetWorth] = useState({})
 
   const fetchNetWorth =async()=>{
     try{
@@ -22,7 +24,7 @@ function App() {
         }
       })
       const data = await response.json();
-      setnetworth(data);
+      setNetWorth(data);
     }catch(error){
 
     }
@@ -36,6 +38,10 @@ function App() {
   const handleButtonClick = (e) => {
     setAddress(tempAddress)
   }
+
+  useEffect(()=>{
+    fetchNetWorth(address)
+  },[address])
 
   return (
         <div className="App">
@@ -63,7 +69,7 @@ function App() {
           Fetch Assets
         </button>
       </div>
-
+      <Networth netWorth={netWorth}/>
       <ChainSelector selectedChains={selectedChains} setSelectedChains={setSelectedChains}/>
       <AssetTable address={address} selectedChains={selectedChains} />
     </div>

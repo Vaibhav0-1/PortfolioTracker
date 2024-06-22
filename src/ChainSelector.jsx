@@ -8,7 +8,7 @@ const blockchainOptions = [
   { id: 'base', name: 'Base', logo: './chainLogos/base-logo.svg' }
 ];
 
-const ChainSelector = ({ selectedChains, setSelectedChains }) => {
+const ChainSelector = ({ selectedChains, setSelectedChains, netWorth }) => {
 
   const toggleChain = (chainId) => {
     setSelectedChains(prevSelected => {
@@ -31,6 +31,9 @@ const ChainSelector = ({ selectedChains, setSelectedChains }) => {
           <div className='chain-details'>
             <div className='chain-name'>
                 {chain.name}
+            </div>
+            <div className='chain-value'>
+              { netWorth.chains.find(c.chains === chain.id).netWorth_usd}
             </div>
           </div>
         </button>

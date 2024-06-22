@@ -10,6 +10,24 @@ function App() {
   const [tempAddress, setTempAddress] = useState("0x209c8bbE2454257Eb1A8E630f59f4b1b50a98543")
   const [address, setAddress] = useState(tempAddress)
 
+  const [networth, setnetworth] = useState({})
+
+  const fetchNetWorth =async()=>{
+    try{
+      const response = await fetch(`https://deep-index.moralis.io/api/v2.2/wallets/${address}/net-worth?chains%5B0%5D=eth&exclude_spam=true&exclude_unverified_contracts=true`,{
+        method: "GET",
+        headers:{
+          "Content-Type": "application/json",
+          "X-API-Key": import.meta.env.VITE_MORALIS_API_KEY,
+        }
+      })
+      const data = await response.json();
+      setnetworth(data);
+    }catch(error){
+
+    }
+  }
+
 
   const handleInputChange = (e) => {
     setTempAddress(e.target.value);

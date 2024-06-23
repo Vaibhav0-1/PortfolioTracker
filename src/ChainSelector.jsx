@@ -10,6 +10,11 @@ const blockchainOptions = [
 
 const ChainSelector = ({ selectedChains, setSelectedChains, netWorth }) => {
 
+  let USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
   const toggleChain = (chainId) => {
     setSelectedChains(prevSelected => {
       const isCurrentlySelected = prevSelected.includes(chainId);
@@ -33,7 +38,7 @@ const ChainSelector = ({ selectedChains, setSelectedChains, netWorth }) => {
                 {chain.name}
             </div>
             <div className='chain-value'>
-              { netWorth.chains.find(c.chains === chain.id).netWorth_usd}
+                { USDollar.format(netWorth.chains?.find( c => c.chain === chain.id).networth_usd) }
             </div>
           </div>
         </button>

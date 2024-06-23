@@ -16,7 +16,7 @@ function App() {
 
   const fetchNetWorth =async()=>{
     try{
-      const response = await fetch(`https://deep-index.moralis.io/api/v2.2/wallets/${address}/net-worth?chains%5B0%5D=eth&exclude_spam=true&exclude_unverified_contracts=true`,{
+      const response = await fetch(`https://deep-index.moralis.io/api/v2.2/wallets/0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326/net-worth?chains%5B0%5D=eth&chains%5B1%5D=polygon&chains%5B2%5D=bsc&chains%5B3%5D=optimism&chains%5B4%5D=base&exclude_spam=true&exclude_unverified_contracts=true`,{
         method: "GET",
         headers:{
           "Content-Type": "application/json",
@@ -42,6 +42,8 @@ function App() {
   useEffect(()=>{
     fetchNetWorth(address)
   },[address])
+
+
 
   return (
         <div className="App">
@@ -70,7 +72,7 @@ function App() {
         </button>
       </div>
       <Networth netWorth={netWorth}/>
-      <ChainSelector selectedChains={selectedChains} setSelectedChains={setSelectedChains}/>
+      <ChainSelector netWorth={netWorth} selectedChains={selectedChains} setSelectedChains={setSelectedChains}/>
       <AssetTable address={address} selectedChains={selectedChains} />
     </div>
   );
